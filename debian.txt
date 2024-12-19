@@ -1,0 +1,67 @@
+login as root
+
+#add packages needed
+apt install  sudo openbox xorg lightdm firefox-esr screenfetch htop xfce4-terminal wget pulseaudio  alsa-util xcompmgr feh
+
+
+#Add User to Group
+usermod –aG sudo eliakimrosil
+
+
+
+#Autologin LightDM
+sudo nano /etc/lightdm/lightdm.conf
+
+[Seat:*]
+#autologin-user=
+#autologin-user-timeout=0
+
+
+sudo nano /etc/default/grub
+GRUB TIMEOUT=5
+sudo update-grub
+
+
+uninstall unwanted packages
+apt remove xterm , vim,
+
+
+
+
+
+
+Configure Open box to start the XFCE4 Panel automatically with system start.
+
+sudo nano /etc/xdg/openbox/autostart
+
+xcompmgr
+
+feh --bg-fill Downloads/bg.jpg
+
+
+
+
+
+
+
+
+connmanctl connect wifi_c006c3bfedaf_50484f454e4958_managed_psk
+
+
+
+lsblk -f
+
+sudo mount /dev/sda2 ~/KIM
+
+
+mpv --no-video 'https://www.youtube.com/watch?v=GNWLILeztaI'
+
+
+
+
+https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-dev/microsoft-edge-dev_112.0.1702.3-1_amd64.deb
+
+
+#connect to usb
+ifconfig -a
+ifconfig usb0 up && dhclient usb0
